@@ -1,0 +1,58 @@
+.nv {
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    background-color: #181a1b;
+}
+
+.nav-link:hover {
+    color:  #fa5b3d !important;
+}
+
+.nav-item {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.main-text {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+
+.flex-grid {
+    display: flex;
+  }
+  .col {
+    flex: 2;
+}
+
+@media (max-width: 100px) {
+    .flex-grid {
+      display: block;
+    }
+}
+
+hr {
+    background-color: white;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-color: #181a1b;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-text h1 {
+    text-align: center;
+    color:  #fa5b3d !important;
+    font-family: 'Comfortaa', cursive;
+}
+
+.about-text p {
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+}
