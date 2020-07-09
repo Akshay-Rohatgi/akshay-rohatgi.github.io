@@ -35,7 +35,7 @@ hr {
     background-color: white;
 }
 
-.masthead {
+.big-t {
     height: 100vh;
     min-height: 500px;
     background-color: #181a1b;
@@ -47,12 +47,25 @@ hr {
 .about-text h1 {
     text-align: center;
     color:  #fa5b3d !important;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .about-text p {
     padding-top: 20px;
     text-align: center;
     color: white;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+.awards-text h1 {
+    text-align: center;
+    color:  #fa5b3d !important;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.awards-text h2 {
+    text-align: center;
+    color:  white !important;
     font-family: 'Comfortaa', cursive;
 }
