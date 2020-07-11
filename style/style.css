@@ -108,6 +108,44 @@ hr {
     color: white;
 }
 
+.project-container {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding-top: 20px;
+    height: 150px;
+    width: 520px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.project-container h4 {
+    text-align: left;
+    padding-left: 15px;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+}
+
+.project-container h4 {
+    text-align: left;
+    padding-left: 15px;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+}
+
+.project-container p {
+    text-align: left;
+    padding-left: 20px;
+    font-size: small;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+}
+
+.project-container a:hover {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    color: #fa5b3d !important;
+}
+
 .number {
     color: #fa5b3d;
 }
@@ -127,3 +165,4 @@ hr {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%)
 }
+
