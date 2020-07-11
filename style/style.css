@@ -77,7 +77,6 @@ hr {
     border: 2px solid #fa5b3d;
     padding-top: 20px;
     width: 980px;
-    height: 500px;
     margin: 0 auto;
     text-align: center;
     background-color: black;
@@ -105,4 +104,10 @@ hr {
 
 .number {
     color: #fa5b3d;
+}
+
+.desc {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
 }
