@@ -88,6 +88,12 @@ hr {
     color: white;
 }
 
+.aw-container a:hover {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    color: #fa5b3d !important;
+}
+
 .aw-container h6 {
     text-align: left;
     padding-left: 10px;
@@ -110,4 +116,14 @@ hr {
     text-align: center;
     font-family: 'Source Code Pro', monospace;
     color: white;
+}
+
+.col-img object {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    left: 100%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
 }
