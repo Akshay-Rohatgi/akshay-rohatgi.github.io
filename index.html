@@ -18,7 +18,7 @@
 <body style="background-color: #181a1b;">
 
     <div class="nv">
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav id="top" class="navbar navbar-expand-lg navbar-dark">
             <div class="d-md-flex d-block flex-row mx-md-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                             <a class="nav-link" href="#Projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#Contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="flexbox" style="padding-top: 170px;">
+            <!-- <div class="flexbox" style="padding-top: 170px;">
                 <div class="about-text">
                     <h1 style="color: white !important;">Online I go by <span style="color: #fa5b3d;">Anub1s</span> or
                         <span style="color: #fa5b3d;">Unnatural Firewall</span></h1>
@@ -95,7 +95,7 @@
                     <div class="col-img" style="text-align: center;">
                         <img src="img/good.png">
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -355,6 +355,37 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="big-t" id="Contact" style="background-color: #181a1b; padding-top: 60px;">
+                    <div class="container-fluid">
+                        <div class="about-text">
+                            <h1>Contact</h1>
+                        </div>
+
+                        <div style="margin: 0 auto; text-align: center; padding-top: 10px;">
+                            <a href="mailto:business.akshayrohatgi@gmail.com"><input class="email-contact" type="submit" value="Email Me!"></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="footer">
+                    <div style="margin: 0 auto; text-align: center; padding-top: 10px; cursor: pointer;">
+                        <input id="back" style="cursor: pointer;" class="email-contact" type="submit" onclick="back()" value="^ Back to top ^">
+                    </div>
+                </div>
+
+                <script>
+                    function back() {
+                        var position =
+                            document.body.scrollTop || document.documentElement.scrollTop;
+                        if (position) {
+                            window.scrollBy(0, -Math.max(1, Math.floor(position / 15)));
+                            scrollAnimation = setTimeout("back()", 20);
+                        } else clearTimeout(scrollAnimation);
+                    }
+                </script>
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

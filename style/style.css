@@ -166,3 +166,12 @@ hr {
     transform: translateX(-50%)
 }
 
+.email-contact {
+    border-radius: 25px;
+    border: 2px solid #fa5b3d;
+    height: 40px;
+    width: 140px;
+    margin: 0 auto;
+    background-color: #181a1b;
+    color: #fa5b3d;
+}
