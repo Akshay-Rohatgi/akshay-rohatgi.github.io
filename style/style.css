@@ -175,3 +175,18 @@ hr {
     background-color: #181a1b;
     color: #fa5b3d;
 }
+
+.top {
+    font-family: 'Inconsolata', monospace;
+    background-color: #181a1b;
+    border-color: #181a1b; 
+    font-size: x-large;
+    color: white;
+    border-radius: 25px;
+    height: 80px;
+    width: 80px;
+}
+
+.top:hover {
+    background-color: #fa5b3d;
+}
