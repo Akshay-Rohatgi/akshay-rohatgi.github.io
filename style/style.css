@@ -1,192 +1,31 @@
-.nv {
-    font-family: 'Inconsolata', monospace;
-    color: white;
-    background-color: #181a1b;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --main-blue: #3d85c6;
+    --main-bg: #191919ff;
 }
 
-.nav-link:hover {
-    color:  #fa5b3d !important;
+html { 
+    overflow-y: hidden; 
 }
 
-.nav-item {
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.main-text {
-    font-family: 'Comfortaa', cursive;
-    color: white;
-}
-
-.flex-grid {
-    display: flex;
-  }
-  .col {
-    flex: 2;
-}
-
-@media (max-width: 100px) {
-    .flex-grid {
-      display: block;
-    }
-}
-
-hr {
-    background-color: white;
-}
-
-.big-t {
-    height: 100vh;
-    min-height: 500px;
-    background-color: #181a1b;
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--main-bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 0;
+	margin: 0;
+    font-family: 'Roboto', sans-serif;  
 }
 
-.about-text h1 {
-    text-align: center;
-    color:  #fa5b3d !important;
-    font-family: 'Orbitron', sans-serif;
+h1 {
+    color: var(--main-blue);
 }
 
-.about-text p {
-    padding-top: 20px;
-    text-align: center;
+p {
     color: white;
-    font-family: 'Comfortaa', cursive;
-}
-
-
-.awards-text h1 {
-    text-align: center;
-    color:  #fa5b3d !important;
-    font-family: 'Orbitron', sans-serif;
-    padding-bottom: 20px;
-    
-}
-
-/* .awards-text h2 {
-    text-align: center;
-    color:  white !important;
-    font-family: 'Comfortaa', cursive;
-} */
-
-.aw-container {
-    border-radius: 25px;
-    border: 2px solid black;
-    padding-top: 20px;
-    width: 980px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: black;
-}
-
-.aw-container h4 {
-    text-align: center;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.aw-container a:hover {
-    text-align: center;
-    font-family: 'Source Code Pro', monospace;
-    color: #fa5b3d !important;
-}
-
-.aw-container h6 {
-    text-align: left;
-    padding-left: 10px;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.aw-container p {
-    text-align: left;
-    padding-left: 20px;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.project-container {
-    border-radius: 25px;
-    border: 2px solid black;
-    padding-top: 20px;
-    height: 150px;
-    width: 520px;
-    margin: 0 auto;
-    background-color: black;
-}
-
-.project-container h4 {
-    text-align: left;
-    padding-left: 15px;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.project-container h4 {
-    text-align: left;
-    padding-left: 15px;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.project-container p {
-    text-align: left;
-    padding-left: 20px;
-    font-size: small;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.project-container a:hover {
-    text-align: center;
-    font-family: 'Source Code Pro', monospace;
-    color: #fa5b3d !important;
-}
-
-.number {
-    color: #fa5b3d;
-}
-
-.desc {
-    text-align: center;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-}
-
-.col-img object {
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    left: 100%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%)
-}
-
-.email-contact {
-    border-radius: 25px;
-    border: 2px solid #fa5b3d;
-    height: 40px;
-    width: 140px;
-    margin: 0 auto;
-    background-color: #181a1b;
-    color: #fa5b3d;
-}
-
-.top {
-    font-family: 'Inconsolata', monospace;
-    background-color: #181a1b;
-    border-color: #181a1b; 
-    font-size: x-large;
-    color: white;
-    border-radius: 25px;
-    height: 80px;
-    width: 80px;
-}
-
-.top:hover {
-    background-color: #fa5b3d;
 }
