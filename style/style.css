@@ -55,7 +55,7 @@ a {
   line-height: 0.9em;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     html,
     body {
         height: 100%;
