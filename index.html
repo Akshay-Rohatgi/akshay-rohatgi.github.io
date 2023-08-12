@@ -17,12 +17,13 @@
       height: 100vh;
     }
     .container {
-      max-width: 600px;
-      padding: 40px;
-      text-align: center;
-      background-color: #000000;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+  max-width: 600px;
+  padding: 40px;
+  text-align: center;
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto; /* Center the container horizontally */
+}
     .profile-info {
       display: flex;
       align-items: center;
@@ -86,25 +87,75 @@
       color: #ff33aa;
     }
 
+    .github-projects {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-box {
+  position: relative; /* Add relative positioning */
+  border: 1px solid #ff66cc;
+  padding: 15px;
+  margin: 10px; /* Adjust margin as needed */
+  background-color: #111111;
+  box-shadow: 0 0 10px rgba(255, 102, 204, 0.1);
+  border-radius: 10px;
+  width: calc(33.33% - 20px); /* Adjust width and margins for spacing */
+  height: 360px; /* Increase the height value */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  display: flex;
+  flex-direction: column; /* Allow content to be aligned properly */
+}
+.project-box h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #ff66cc;
+}
+.project-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  flex-grow: 1; /* Allow the content to expand and take remaining space */
+}
+.project-box a {
+  position: absolute; /* Add absolute positioning */
+  bottom: 15px; /* Adjust the distance from the bottom */
+  left: 50%; /* Center the link horizontally */
+  transform: translateX(-50%); /* Center the link horizontally */
+  display: inline-block;
+  font-size: 16px;
+  color: #ff66cc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.project-box a:hover {
+  color: #ff33aa;
+}
+
     /* Responsive Styles */
     @media screen and (max-width: 480px) {
-      .container {
-        padding: 20px;
-      }
-      .profile-info {
-        flex-direction: column;
-      }
-      .profile-icon {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      .social-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      h1 {
-        font-size: 24px;
-      }
+  .container {
+    padding: 20px;
+  }
+  .profile-info {
+    flex-direction: column;
+    align-items: center; /* Add this line to center align items */
+  }
+  .profile-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 24px;
+    margin: 10px 0; /* Add this line to add space below the name */
+  }
+}
     }
   </style>
 </head>
@@ -112,7 +163,7 @@
   <div class="container">
     <div class="profile-info">
       <div class="profile-icon">
-        <img src="./img/pinkhat.png" alt="Your Icon">
+        <img src="./img/pinksuit.jpg" alt="Your Icon">
       </div>
       <h1>Akshay Rohatgi</h1>
     </div>
@@ -132,9 +183,29 @@
       <p>
         I'm Akshay, a computer science student at the University of California, Irvine with a passion for cybersecurity. 
         I'm a 3x CyberPatriot National Champion and looking to continue competing and learning in the field of cybersecurity throughout college. 
+        If you have time, check out my <a href="https://akshayrohatgi.com/blog/" target="_blank" style="color: #ff66cc;">blog</a>!
       </p>
     </div>
-    <a class="blog-link" href="https://akshayrohatgi.com/blog/" target="_blank">blog</a>
+    
+    <!-- GitHub Projects Section -->
+    <h2>Projects</h2>
+
+    <div class="github-projects">
+      <div class="project-box">
+        <h3>Aeacus</h3>
+        <p>🔐 Defensive cybersecurity training suite focused on vulnerability remediation and system compliance        </p>
+        <a href="https://elysium-suite.netlify.app/">view</a>
+      </div>
+      <div class="project-box">
+        <h3>Operation Titan Shield</h3>
+        <p>Files from a 🔴 Red Team v. 🔵 Blue Team competition I hosted</p>
+        <a href="https://github.com/Akshay-Rohatgi/operation-TITAN-SHIELD">view</a>
+      </div>
+      <div class="project-box">
+        <h3>mimicord</h3>
+        <p>Shell program to install systemd service that runs mimipenguin to extract 🔑 passswords from process dumps and then posts results to discord webhook</p>
+        <a href="https://github.com/Akshay-Rohatgi/mimicord">view</a>
+      </div>    </div>
   </div>
 </body>
 </html>
