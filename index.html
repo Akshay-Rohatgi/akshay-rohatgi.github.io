@@ -1,217 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akshay Rohatgi</title>
-  <link rel="icon" type="image/png" href="./img/shay.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
   <style>
+    :root {
+      --bg: #000000;
+      --fg: #d8d8d8;
+      --muted: #8a8a8a;
+      --soft: #b7b7b7;
+      --bright: #f5f5f5;
+      --line: #343434;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
     body {
-      font-family: Consolas, monospace;
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
-      background-color: #000000;
-      color: #ffffff;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.035), transparent 26rem),
+        var(--bg);
+      color: var(--fg);
+      font-family: Consolas, "IBM Plex Mono", "SFMono-Regular", "Liberation Mono", monospace;
       display: flex;
+      align-items: flex-start;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: clamp(48px, 10vh, 96px) clamp(24px, 5vw, 72px) clamp(24px, 5vw, 72px);
     }
-    .container {
-  max-width: 600px;
-  padding: 40px;
-  text-align: center;
-  background-color: #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: auto; /* Center the container horizontally */
-}
-    .profile-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .profile-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 20px;
-      overflow: hidden; /* Hide any part of the image outside the circle */
+
+    .terminal {
+      width: min(680px, 100%);
+      display: grid;
+      align-items: start;
     }
-    .profile-icon img {
-      width: 100%; /* Make the image scale to fit the circle */
-      height: 100%;
-      object-fit: cover; /* Prevent distortion of the image */
+
+    .info {
+      width: 100%;
+      max-width: none;
     }
+
+    .identity {
+      margin-bottom: 28px;
+    }
+
     h1 {
-      font-size: 28px;
       margin: 0;
-      color: #87eaff;
-      margin-top: 10px;
-      margin-bottom: 5px;
+      color: var(--bright);
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 700;
+      line-height: 1;
     }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+
+    .rule {
+      color: var(--muted);
+      margin: 8px 0 18px;
+      letter-spacing: 0;
     }
-    .social-link {
-      margin: 10px;
-      font-size: 20px;
-      color: #87eaff;
-      transition: color 0.2s;
+
+    .stats {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
     }
-    .social-link:hover {
-      color: #ff33aa;
+
+    .stat {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
     }
-    .about-me {
-      text-align: left;
+
+    .key {
+      color: var(--muted);
+    }
+
+    .value {
+      color: var(--fg);
+    }
+
+    .value a {
+      color: var(--bright);
+      transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+    }
+
+    .value a::before {
+      content: "[";
+      color: var(--muted);
+    }
+
+    .value a::after {
+      content: "]";
+      color: var(--muted);
+    }
+
+    .value a:hover,
+    .value a:focus-visible {
+      color: var(--bg);
+      background: var(--bright);
+      outline: none;
+    }
+
+    .value a:hover::before,
+    .value a:hover::after,
+    .value a:focus-visible::before,
+    .value a:focus-visible::after {
+      color: var(--bg);
+    }
+
+    .section {
       margin-top: 30px;
     }
-    .about-me p {
-      font-size: 16px;
-      line-height: 1.6;
+
+    .section-title {
+      color: var(--bright);
+      font-size: 14px;
+      letter-spacing: 0;
+      margin: 0 0 12px;
+      text-transform: lowercase;
     }
-    .blog-link {
+
+    .section-title::after {
+      content: "";
       display: block;
-      margin-top: 20px;
-      font-size: 20px;
-      color: #87eaff;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .blog-link:hover {
-      color: #ff33aa;
+      height: 1px;
+      margin-top: 8px;
+      background: var(--line);
     }
 
-    .github-projects {
-  text-align: center;
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.project-box {
-  position: relative; /* Add relative positioning */
-  border: 1px solid #87eaff;
-  padding: 15px;
-  margin: 10px; /* Adjust margin as needed */
-  background-color: #111111;
-  box-shadow: 0 0 10px rgba(255, 102, 204, 0.1);
-  border-radius: 10px;
-  width: calc(33.33% - 20px); /* Adjust width and margins for spacing */
-  height: 360px; /* Increase the height value */
-  box-sizing: border-box; /* Include padding and border in width calculation */
-  display: flex;
-  flex-direction: column; /* Allow content to be aligned properly */
-}
-.project-box h3 {
-  font-size: 20px;
-  margin: 0;
-  color: #87eaff;
-}
-.project-box p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ffffff;
-  flex-grow: 1; /* Allow the content to expand and take remaining space */
-}
-.project-box a {
-  position: absolute; /* Add absolute positioning */
-  bottom: 15px; /* Adjust the distance from the bottom */
-  left: 50%; /* Center the link horizontally */
-  transform: translateX(-50%); /* Center the link horizontally */
-  display: inline-block;
-  font-size: 16px;
-  color: #87eaff;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.project-box a:hover {
-  color: #ff33aa;
-}
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
 
-    /* Responsive Styles */
-    @media screen and (max-width: 480px) {
-  .container {
-    padding: 20px;
-  }
-  .profile-info {
-    flex-direction: column;
-    align-items: center; /* Add this line to center align items */
-  }
-  .profile-icon {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .social-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  h1 {
-    font-size: 24px;
-    margin: 10px 0; /* Add this line to add space below the name */
-  }
-}
+    .link {
+      color: var(--soft);
+      font-size: 14px;
+      transition: color 160ms ease, background 160ms ease;
+    }
+
+    .link::before {
+      content: "[";
+      color: var(--muted);
+    }
+
+    .link::after {
+      content: "]";
+      color: var(--muted);
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      background: var(--bright);
+      color: var(--bg);
+      outline: none;
+    }
+
+    .projects {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .project-heading {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: baseline;
+      min-width: 0;
+    }
+
+    .project-id,
+    .project-desc {
+      color: var(--muted);
+    }
+
+    .project-id::before {
+      content: "[";
+    }
+
+    .project-id::after {
+      content: "]";
+    }
+
+    .project-name {
+      color: var(--bright);
+      font-weight: 700;
+      min-width: 0;
+    }
+
+    .project-desc {
+      display: block;
+      margin-top: 5px;
+      padding-left: 28px;
+    }
+
+    .project-link {
+      color: var(--soft);
+      white-space: nowrap;
+      transition: color 160ms ease;
+    }
+
+    .project-link:hover,
+    .project-link:focus-visible {
+      color: var(--bright);
+      outline: none;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        align-items: flex-start;
+      }
+
+      .terminal {
+        width: 100%;
+      }
+
+      .info {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 22px;
+      }
+
+      .stat {
+        grid-template-columns: 76px 1fr;
+        gap: 10px;
+      }
+
+      .project {
+        font-size: 13px;
+      }
+
+      .project-desc {
+        padding-left: 0;
+      }
+    }
   </style>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
-<script>
-  /* global dataLayer */
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics.id }}');
-</script>
 <body>
-  <div class="container">
-    <div class="profile-info">
-      <div class="profile-icon">
-        <img src="./img/shay.png" alt="Your Icon">
+  <main class="terminal" aria-label="Akshay Rohatgi portfolio">
+    <section class="info">
+      <div class="identity">
+        <h1>Akshay Rohatgi</h1>
+        <div class="rule">----------------</div>
+        <dl class="stats">
+          <div class="stat">
+            <dt class="key">student</dt>
+            <dd class="value">cs @ uci</dd>
+          </div>
+          <div class="stat">
+            <dt class="key">focus</dt>
+            <dd class="value">cybersecurity and agentic systems</dd>
+          </div>
+          <div class="stat">
+            <dt class="key">handle</dt>
+            <dd class="value">hypernova</dd>
+          </div>
+          <div class="stat">
+            <dt class="key">wins</dt>
+            <dd class="value">ccdc national champion</dd>
+          </div>
+          <div class="stat">
+            <dt class="key">certs</dt>
+            <dd class="value">oscp</dd>
+          </div>
+          <div class="stat">
+            <dt class="key">writing</dt>
+            <dd class="value"><a class="link" href="https://akshayrohatgi.com/blog/" target="_blank" rel="noreferrer">blog -&gt;</a></dd>
+          </div>
+        </dl>
       </div>
-      <h1>Akshay Rohatgi</h1>
-    </div>
-    <div class="social-links">
-      <a class="social-link" href="https://twitter.com/awsm3akshay" target="_blank" title="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a class="social-link" href="https://www.linkedin.com/in/akshay-rohatgi-1564521b2/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a class="social-link" href="https://github.com/Akshay-Rohatgi" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>
-        I'm Akshay, a computer science student at the University of California, Irvine with a deep interest in cybersecurity. 
-        I'm a CCDC and CyberPatriot National Champion. 
-        If you have time, check out my <a href="https://akshayrohatgi.com/blog/" target="_blank" style="color: #87eaff;">blog</a>!
-      </p>
-    </div>
-    
-    <!-- GitHub Projects Section -->
-    <h2>Projects</h2>
 
-    <div class="github-projects">
-      <div class="project-box">
-        <h3>Elysium</h3>
-        <p>Defensive cybersecurity training suite focused on vulnerability remediation and system compliance </p>
-        <a href="https://elysium-suite.netlify.app/">view</a>
-      </div>
-      <div class="project-box">
-        <h3>Starshower</h3>
-        <p>A personal toolkit of custom bash scripts and utilities designed for use in red team engagements.</p>
-        <a href="https://github.com/Akshay-Rohatgi/starshower">view</a>
-      </div>
-      <div class="project-box">
-        <h3>rustpenguin</h3>
-        <p>Rust program to discover plaintext credentials in process memory. Reimplementation of mimipenguin.</p>
-        <a href="https://github.com/Akshay-Rohatgi/rustpenguin">view</a>
-      </div>    </div>
-  </div>
+      <section class="section" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title">projects</h2>
+        <div class="projects">
+          <article class="project">
+            <div class="project-heading">
+              <span class="project-id">01</span>
+              <span class="project-name">GameOfEverything</span>
+              <a class="project-link" href="https://github.com/Akshay-Rohatgi/GameOfEverything" target="_blank" rel="noreferrer">view -&gt;</a>
+            </div>
+            <span class="project-desc">agentic system to build vulnerable cyber ranges on demand</span>
+          </article>
+          <article class="project">
+            <div class="project-heading">
+              <span class="project-id">02</span>
+              <span class="project-name">Elysium</span>
+              <a class="project-link" href="https://elysium-suite.netlify.app/" target="_blank" rel="noreferrer">view -&gt;</a>
+            </div>
+            <span class="project-desc">defensive cybersecurity training suite</span>
+          </article>
+          <article class="project">
+            <div class="project-heading">
+              <span class="project-id">03</span>
+              <span class="project-name">Starshower</span>
+              <a class="project-link" href="https://github.com/Akshay-Rohatgi/starshower" target="_blank" rel="noreferrer">view -&gt;</a>
+            </div>
+            <span class="project-desc">personal toolkit for red team operations</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <h2 class="section-title" id="links-title">links</h2>
+        <div class="links">
+          <a class="link" href="https://github.com/Akshay-Rohatgi" target="_blank" rel="noreferrer">github -&gt;</a>
+          <a class="link" href="https://www.linkedin.com/in/akshay-rohatgi-1564521b2/" target="_blank" rel="noreferrer">linkedin -&gt;</a>
+          <a class="link" href="https://twitter.com/awsm3akshay" target="_blank" rel="noreferrer">twitter -&gt;</a>
+          <!-- <a class="link" href="https://akshayrohatgi.com/blog/" target="_blank" rel="noreferrer">blog -&gt;</a> -->
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
+  <script>
+    /* global dataLayer */
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics.id }}');
+  </script>
 </body>
 </html>
