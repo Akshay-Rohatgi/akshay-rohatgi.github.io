@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akshay Rohatgi</title>
   <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000000;
@@ -31,7 +34,7 @@
         radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.035), transparent 26rem),
         var(--bg);
       color: var(--fg);
-      font-family: Consolas, "IBM Plex Mono", "SFMono-Regular", "Liberation Mono", monospace;
+      font-family: "IBM Plex Mono", Consolas, "SFMono-Regular", "Liberation Mono", monospace;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -184,7 +187,7 @@
 
     .project-heading {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr;
       gap: 10px;
       align-items: baseline;
       min-width: 0;
@@ -213,18 +216,6 @@
       display: block;
       margin-top: 5px;
       padding-left: 28px;
-    }
-
-    .project-link {
-      color: var(--soft);
-      white-space: nowrap;
-      transition: color 160ms ease;
-    }
-
-    .project-link:hover,
-    .project-link:focus-visible {
-      color: var(--bright);
-      outline: none;
     }
 
     @media (max-width: 760px) {
@@ -301,24 +292,21 @@
           <article class="project">
             <div class="project-heading">
               <span class="project-id">01</span>
-              <span class="project-name">GameOfEverything</span>
-              <a class="project-link" href="https://github.com/Akshay-Rohatgi/GameOfEverything" target="_blank" rel="noreferrer">view -&gt;</a>
+              <a class="link project-name" href="https://github.com/Akshay-Rohatgi/GameOfEverything" target="_blank" rel="noreferrer">GameOfEverything -&gt;</a>
             </div>
             <span class="project-desc">agentic system to build vulnerable cyber ranges on demand</span>
           </article>
           <article class="project">
             <div class="project-heading">
               <span class="project-id">02</span>
-              <span class="project-name">Elysium</span>
-              <a class="project-link" href="https://elysium-suite.netlify.app/" target="_blank" rel="noreferrer">view -&gt;</a>
+              <a class="link project-name" href="https://github.com/elysium-suite/aeacus" target="_blank" rel="noreferrer">Aeacus -&gt;</a>
             </div>
-            <span class="project-desc">defensive cybersecurity training suite</span>
+            <span class="project-desc">vulnerability remediation training tool</span>
           </article>
           <article class="project">
             <div class="project-heading">
               <span class="project-id">03</span>
-              <span class="project-name">Starshower</span>
-              <a class="project-link" href="https://github.com/Akshay-Rohatgi/starshower" target="_blank" rel="noreferrer">view -&gt;</a>
+              <a class="link project-name" href="https://github.com/Akshay-Rohatgi/starshower" target="_blank" rel="noreferrer">Starshower -&gt;</a>
             </div>
             <span class="project-desc">personal toolkit for red team operations</span>
           </article>
