@@ -206,9 +206,18 @@
       content: "]";
     }
 
-    .project-name {
+    .project-name,
+    .project-talk {
       color: var(--bright);
       font-weight: 700;
+      min-width: 0;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      align-items: baseline;
       min-width: 0;
     }
 
@@ -216,6 +225,11 @@
       display: block;
       margin-top: 5px;
       padding-left: 28px;
+    }
+
+    .publication-author {
+      color: inherit;
+      font-weight: 700;
     }
 
     @media (max-width: 760px) {
@@ -257,7 +271,7 @@
     <section class="info">
       <div class="identity">
         <h1>Akshay Rohatgi</h1>
-        <div class="rule">----------------</div>
+        <div class="rule">----------------------------------------------------------------------</div>
         <dl class="stats">
           <div class="stat">
             <dt class="key">student</dt>
@@ -292,7 +306,10 @@
           <article class="project">
             <div class="project-heading">
               <span class="project-id">01</span>
-              <a class="link project-name" href="https://github.com/Akshay-Rohatgi/GameOfEverything" target="_blank" rel="noreferrer">GameOfEverything -&gt;</a>
+              <div class="project-links">
+                <a class="link project-name" href="https://github.com/Akshay-Rohatgi/GameOfEverything" target="_blank" rel="noreferrer">GameOfEverything -&gt;</a>
+                <a class="link project-talk" href="https://youtu.be/GweNsxSuR4o?t=4233" target="_blank" rel="noreferrer">BSidesLV '27 talk -&gt;</a>
+              </div>
             </div>
             <span class="project-desc">agentic system to build vulnerable cyber ranges on demand</span>
           </article>
@@ -309,6 +326,19 @@
               <a class="link project-name" href="https://github.com/Akshay-Rohatgi/starshower" target="_blank" rel="noreferrer">Starshower -&gt;</a>
             </div>
             <span class="project-desc">personal toolkit for red team operations</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="publications-title">
+        <h2 class="section-title" id="publications-title">publications</h2>
+        <div class="projects">
+          <article class="project">
+            <div class="project-heading">
+              <span class="project-id">01</span>
+              <a class="link project-name" href="./assets/netsiege-sigcse-ts-2027.pdf" target="_blank" rel="noreferrer">Netsiege: A Long-Form, Club-Led King-of-the-Hill Competition for Accessible Cybersecurity Training -&gt;</a>
+            </div>
+            <span class="project-desc">Steven Ngo, <span class="publication-author">Akshay Rohatgi</span>, and Joshua Garcia · SIGCSE TS 2027</span>
           </article>
         </div>
       </section>
